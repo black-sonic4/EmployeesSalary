@@ -4,7 +4,7 @@ Employee manager = new Employee()
 {
     Name = "Ahmad",
     JoinDate = new DateOnly(2024, 1, 1),
-    Type = "Manager",
+    Type = EmployeeType.Manager,
     BaseSalary = 20000,
 };
 
@@ -13,7 +13,7 @@ Employee salesman = new Employee()
 {
     Name = "Mohamad",
     JoinDate = new DateOnly(2024, 10, 1),
-    Type = "Salesman",
+    Type = EmployeeType.Salesman,
     BaseSalary = 10000,
 };
 
@@ -21,7 +21,7 @@ Employee secretary = new Employee()
 {
     Name = "Rami",
     JoinDate = new DateOnly(2024, 10, 1),
-    Type = "Secretary",
+    Type = EmployeeType.Secretary,
     BaseSalary = 5000,
 };
 
