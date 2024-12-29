@@ -4,7 +4,8 @@
     {
         Manager,
         Salesman,
-        Secretary
+        Secretary,
+        Something
     }
     internal class Employee
     {
