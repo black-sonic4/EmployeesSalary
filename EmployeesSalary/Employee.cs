@@ -19,6 +19,7 @@
 
             int totalMonths = ((today.Year - JoinDate.Year) * 12) + (today.Month - JoinDate.Month);
             double rate = 0.0;
+            int TotalSalary;
             if (Type == EmployeeType.Manager)
             {
                 if (totalMonths >= 12)
@@ -35,9 +36,10 @@
             {
                 rate = 0.05;
             }
+            TotalSalary = (int)Math.Floor(BaseSalary + rate * BaseSalary);
             if (today.Month == 1)
-                return CalculateBouns() + BaseSalary;
-            return (int) Math.Floor(BaseSalary + rate * BaseSalary);
+                return CalculateBouns() + TotalSalary;
+            return TotalSalary;
         }
 
         public int CalculateBouns ()
