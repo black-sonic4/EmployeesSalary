@@ -35,10 +35,12 @@
             {
                 rate = 0.05;
             }
+            if (today.Month == 1)
+                return CalculateBouns() + BaseSalary;
             return (int) Math.Floor(BaseSalary + rate * BaseSalary);
         }
 
-        public double CalculateBouns ()
+        public int CalculateBouns ()
         {
             DateOnly today = DateOnly.FromDateTime(DateTime.Now);
             int totalMonths = (today.Year - JoinDate.Year) * 12 + (today.Month - JoinDate.Month);
@@ -51,7 +53,7 @@
             {
                 addedMoney = (25 * totalMonths);
             }
-            return BaseSalary + addedMoney;
+            return (int) Math.Floor(addedMoney);
            
         }
 

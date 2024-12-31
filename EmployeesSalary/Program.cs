@@ -51,8 +51,8 @@ foreach (Employee employee in new[] { manager, salesman, secretary })
     Console.WriteLine("Employee " + employee.Name + "/" + employee.Type + ". Joined in: " + employee.JoinDate + " BaseSalary: " + employee.BaseSalary + ". Total Salary: " + employee.CalculateSalary());
 }
 
-foreach (Employee employee in new[] {manager, salesman, secretary})
+Console.WriteLine("New year editing - 3:");
+foreach (Employee employee in new[] { manager, salesman, secretary })
 {
-    Console.WriteLine("Emplyee " + employee.Name + " Base Salary: " + employee.BaseSalary + 
-        " Join in : " + employee.JoinDate + " Bouns = " + employee.CalculateBouns());
+    Console.WriteLine("Employee " + employee.Name + "/" + employee.Type + ". Joined in: " + employee.JoinDate + " BaseSalary: " + employee.BaseSalary + ". Total Salary: " + employee.CalculateSalary());
 }
