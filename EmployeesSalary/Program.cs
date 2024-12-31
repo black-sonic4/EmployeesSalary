@@ -17,6 +17,9 @@ void test_manager()
     Debug.Assert(manager.CalculateSalary() == 22000);
     manager.JoinDate = new DateOnly(2023, 1, 1);
     Debug.Assert(manager.CalculateSalary() == 25000);
+
+    Util.GetToday = () => new DateOnly(2025, 1, 1); // Mock date
+    Debug.Assert(manager.CalculateSalary() == 29400);
 }
 
 void test_salesman()
@@ -35,6 +38,9 @@ void test_salesman()
     Debug.Assert(salesman.CalculateSalary() == 20200);
     salesman.JoinDate = new DateOnly(2023, 1, 1);
     Debug.Assert(salesman.CalculateSalary() == 20200);
+
+    Util.GetToday = () => new DateOnly(2025, 1, 1); // Mock date
+    Debug.Assert(salesman.CalculateSalary() == 20800);
 }
 
 
@@ -54,6 +60,9 @@ void test_secretary()
     Debug.Assert(secretary.CalculateSalary() == 21000);
     secretary.JoinDate = new DateOnly(2023, 1, 1);
     Debug.Assert(secretary.CalculateSalary() == 21000);
+    
+    Util.GetToday = () => new DateOnly(2025, 1, 1); // Mock date
+    Debug.Assert(secretary.CalculateSalary() == 21600);
 }
 
 test_manager();
