@@ -15,9 +15,7 @@
         public DateOnly JoinDate {  get; set; }
         public int CalculateSalary()
         {
-            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
-
-            int totalMonths = ((today.Year - JoinDate.Year) * 12) + (today.Month - JoinDate.Month);
+            int totalMonths = Util.CalculateTotalMonthsFromToday(JoinDate);
             double rate = 0.0;
             int TotalSalary;
             if (Type == EmployeeType.Manager)
@@ -37,15 +35,14 @@
                 rate = 0.05;
             }
             TotalSalary = (int)Math.Floor(BaseSalary + rate * BaseSalary);
-            if (today.Month == 1)
+            if (Util.GetToday().Month == 1)
                 return CalculateBouns() + TotalSalary;
             return TotalSalary;
         }
 
         public int CalculateBouns ()
         {
-            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
-            int totalMonths = (today.Year - JoinDate.Year) * 12 + (today.Month - JoinDate.Month);
+            int totalMonths = Util.CalculateTotalMonthsFromToday(JoinDate);
             double addedMoney = 0.0;
             if(Type == EmployeeType.Manager)
             {
