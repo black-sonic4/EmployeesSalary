@@ -38,5 +38,22 @@
             return (int) Math.Floor(BaseSalary + rate * BaseSalary);
         }
 
+        public double CalculateBouns ()
+        {
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+            int totalMonths = (today.Year - JoinDate.Year) * 12 + (today.Month - JoinDate.Month);
+            double addedMoney = 0.0;
+            if(Type == EmployeeType.Manager)
+            {
+                addedMoney = (100 * totalMonths) + (0.1 * BaseSalary);
+            }
+            if(Type == EmployeeType.Salesman || Type == EmployeeType.Secretary)
+            {
+                addedMoney = (25 * totalMonths);
+            }
+            return addedMoney;
+           
+        }
+
     }
 }
