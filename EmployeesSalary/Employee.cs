@@ -15,9 +15,7 @@
         public DateOnly JoinDate {  get; set; }
         public int CalculateSalary()
         {
-            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
-
-            int totalMonths = ((today.Year - JoinDate.Year) * 12) + (today.Month - JoinDate.Month);
+            int totalMonths = Util.CalculateTotalMonthsFromToday(JoinDate);
             double rate = 0.0;
             if (Type == EmployeeType.Manager)
             {
