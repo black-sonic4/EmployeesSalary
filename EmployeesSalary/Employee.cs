@@ -35,7 +35,7 @@
                 rate = 0.05;
             }
             TotalSalary = (int)Math.Floor(BaseSalary + rate * BaseSalary);
-            if (today.Month == 1)
+            if (Util.GetToday().Month == 1)
                 return CalculateBouns() + TotalSalary;
             return TotalSalary;
         }
