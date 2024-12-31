@@ -51,7 +51,7 @@
             {
                 addedMoney = (25 * totalMonths);
             }
-            return addedMoney;
+            return BaseSalary + addedMoney;
            
         }
 
