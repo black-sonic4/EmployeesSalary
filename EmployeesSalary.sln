@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesSalary", "EmployeesSalary\EmployeesSalary.csproj", "{A9112CC1-705E-4D9E-A594-113A400736A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1E5550A6-00CB-4AEC-80C8-24E9819A7344}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{9FBF20B0-3EEB-4E43-BC0C-8B25BE97BD37}"
+	ProjectSection(SolutionItems) = preProject
+		rn.yml = rn.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9FBF20B0-3EEB-4E43-BC0C-8B25BE97BD37} = {1E5550A6-00CB-4AEC-80C8-24E9819A7344}
 	EndGlobalSection
 EndGlobal
