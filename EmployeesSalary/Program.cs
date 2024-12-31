@@ -1,5 +1,7 @@
-﻿using EmployeesSalary;
+﻿using System.Diagnostics;
+using EmployeesSalary;
 
+Debug.Assert(false);
 Employee manager = new Employee()
 {
     Name = "Ahmad",
