@@ -42,8 +42,7 @@
 
         public int CalculateBouns ()
         {
-            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
-            int totalMonths = (today.Year - JoinDate.Year) * 12 + (today.Month - JoinDate.Month);
+            int totalMonths = Util.CalculateTotalMonthsFromToday(JoinDate);
             double addedMoney = 0.0;
             if(Type == EmployeeType.Manager)
             {
