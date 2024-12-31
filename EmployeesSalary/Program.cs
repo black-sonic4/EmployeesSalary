@@ -68,6 +68,7 @@ void test_secretary()
 test_manager();
 test_salesman();
 test_secretary();
+Util.GetToday = () => DateOnly.FromDateTime(DateTime.Now);
 
 
 Employee manager = new Employee()
