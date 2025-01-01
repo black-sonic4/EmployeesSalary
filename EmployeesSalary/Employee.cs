@@ -11,49 +11,34 @@
     {
         public string Name { get; set; }
         public int BaseSalary { get; set; }
-        public EmployeeType Type { get; set; }
+        public EmployeeType Type { get; protected set; }
         public DateOnly JoinDate {  get; set; }
         public int CalculateSalary()
         {
-            int totalMonths = Util.CalculateTotalMonthsFromToday(JoinDate);
-            double rate = 0.0;
-            int TotalSalary;
-            if (Type == EmployeeType.Manager)
-            {
-                if (totalMonths >= 12)
-                    rate = 0.10;
-                if (totalMonths >= 16)
-                    rate = 0.25;
-            }
-            if (Type == EmployeeType.Salesman)
-            {
-                if (totalMonths >= 6)
-                    rate = 0.01;
-            }
-            if (Type == EmployeeType.Secretary)
-            {
-                rate = 0.05;
-            }
-            TotalSalary = (int)Math.Floor(BaseSalary + rate * BaseSalary);
+            double rate = CalculateRateBaseSalary();
+            double allowance = CalculateAllowance();
+            double new_year_bonus = CalculateNewYearBonus();
+            
+            double total_salary_without_new_year_bonus = (rate + 1.0) * BaseSalary + allowance;
+            
             if (Util.GetToday().Month == 1)
-                return CalculateBouns() + TotalSalary;
-            return TotalSalary;
+                return (int)Math.Floor(new_year_bonus + total_salary_without_new_year_bonus);
+            
+            return (int)Math.Floor(total_salary_without_new_year_bonus);
         }
 
-        public int CalculateBouns ()
+        public virtual double CalculateRateBaseSalary()
         {
-            int totalMonths = Util.CalculateTotalMonthsFromToday(JoinDate);
-            double addedMoney = 0.0;
-            if(Type == EmployeeType.Manager)
-            {
-                addedMoney = (100 * totalMonths) + (0.1 * BaseSalary);
-            }
-            if(Type == EmployeeType.Salesman || Type == EmployeeType.Secretary)
-            {
-                addedMoney = (25 * totalMonths);
-            }
-            return (int) Math.Floor(addedMoney);
-           
+            return 0.0;
+        }
+        public virtual double CalculateAllowance()
+        {
+            return 0.0;
+        }
+
+        public virtual double CalculateNewYearBonus()
+        {
+            return 0.0;
         }
 
     }
