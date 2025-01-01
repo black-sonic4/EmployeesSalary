@@ -5,11 +5,10 @@ void test_manager()
 {
     Util.GetToday = () => new DateOnly(2024, 7, 1); // Mock date
 
-    Employee manager = new Employee()
+    Employee manager = new ManagerEmployee()
     {
         Name = "Ahmad",
         JoinDate = new DateOnly(2024, 6, 1),
-        Type = EmployeeType.Manager,
         BaseSalary = 20000,
     };
     Debug.Assert(manager.CalculateSalary() == 20000);
@@ -26,11 +25,10 @@ void test_salesman()
 {
     Util.GetToday = () => new DateOnly(2024, 7, 1); // Mock date
 
-    Employee salesman = new Employee()
+    Employee salesman = new SalesmanEmployee()
     {
         Name = "Ahmad",
         JoinDate = new DateOnly(2024, 6, 1),
-        Type = EmployeeType.Salesman,
         BaseSalary = 20000,
     };
     Debug.Assert(salesman.CalculateSalary() == 20000);
@@ -48,11 +46,10 @@ void test_secretary()
 {
     Util.GetToday = () => new DateOnly(2024, 7, 1); // Mock date
 
-    Employee secretary = new Employee()
+    Employee secretary = new SecretaryEmployee()
     {
         Name = "Ahmad",
         JoinDate = new DateOnly(2024, 6, 1),
-        Type = EmployeeType.Secretary,
         BaseSalary = 20000,
     };
     Debug.Assert(secretary.CalculateSalary() == 21000);
@@ -71,28 +68,25 @@ test_secretary();
 Util.GetToday = () => DateOnly.FromDateTime(DateTime.Now);
 
 
-Employee manager = new Employee()
+Employee manager = new ManagerEmployee()
 {
     Name = "Ahmad",
     JoinDate = new DateOnly(2024, 1, 1),
-    Type = EmployeeType.Manager,
     BaseSalary = 20000,
 };
 
 
-Employee salesman = new Employee()
+Employee salesman = new SalesmanEmployee()
 {
     Name = "Mohamad",
     JoinDate = new DateOnly(2024, 10, 1),
-    Type = EmployeeType.Salesman,
     BaseSalary = 10000,
 };
 
-Employee secretary = new Employee()
+Employee secretary = new SecretaryEmployee()
 {
     Name = "Rami",
     JoinDate = new DateOnly(2024, 10, 1),
-    Type = EmployeeType.Secretary,
     BaseSalary = 5000,
 };
 
